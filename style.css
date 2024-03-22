@@ -101,17 +101,6 @@ body::before {
     cursor: pointer;
 }
 
-.container__botao-desabilitado {
-    border-radius: 16px;
-    background: #6f6f70;
-    padding: 16px 24px;
-    font-size: 24px;
-    width: 100%;
-    font-weight: 700;
-    border: none;
-    cursor: not-allowed;
-}
-
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 72px;
