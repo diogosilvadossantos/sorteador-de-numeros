@@ -26,7 +26,7 @@ function sortear(){
     let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
     document.getElementById('btn-reiniciar').removeAttribute('disabled');
-    limparCampo();
+    // limparCampo();
     
     // alert(sorteados);
     // if (quantidade === 1) {
@@ -41,14 +41,17 @@ function obterNumeroAleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function limparCampo() {
+// function limparCampo() {
+//     quantidade.value = '';
+//     de.value = '';
+//     ate.value = '';
+// }
+
+function reiniciar(){
+    // limparCampo();
+    document.getElementById('btn-reiniciar').setAttribute('disabled', true);
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: nenhum até agora</label>`;
     quantidade.value = '';
     de.value = '';
     ate.value = '';
-}
-
-function reiniciar(){
-    limparCampo();
-    document.getElementById('btn-reiniciar').setAttribute('disabled', true);
-    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: nenhum até agora</label>`;
 }
