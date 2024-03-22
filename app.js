@@ -32,7 +32,9 @@ function sortear(){
             }  
 
             let resultado = document.getElementById('resultado');
-            resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+            let fraseResultado = quantidade > 1 ? 'Números sorteados: ' : 'Número sorteado: ';
+            resultado.innerHTML = `<label class="texto__paragrafo">${fraseResultado}  ${sorteados}</label>`;
+            document.getElementById('btn-sortear').setAttribute('disabled', true);
             document.getElementById('btn-reiniciar').removeAttribute('disabled');
             
         }
@@ -64,6 +66,7 @@ function obterNumeroAleatorio(min, max){
 function reiniciar(){
     // limparCampo();
     document.getElementById('btn-reiniciar').setAttribute('disabled', true);
+    document.getElementById('btn-sortear').removeAttribute('disabled');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: nenhum até agora</label>`;
     quantidade.value = '';
     de.value = '';
