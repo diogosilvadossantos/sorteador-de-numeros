@@ -14,18 +14,21 @@ function sortear(){
     for (let i = 0; i < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
 
-        while (sorteados.includes(numero)) {
-            numero = obterNumeroAleatorio(de, ate);
+        if (ate <= de) {
+            alert('O valor do número deve ser maior que o valor de até o número!');   
+        } else {
+            while (sorteados.includes(numero)) {
+                numero = obterNumeroAleatorio(de, ate);
+            }
+
+            sorteados.push(numero);
+
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+            document.getElementById('btn-reiniciar').removeAttribute('disabled');
+        
         }
-        
-        sorteados.push(numero);
-        
-        
     }
-    
-    let resultado = document.getElementById('resultado');
-    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
-    document.getElementById('btn-reiniciar').removeAttribute('disabled');
     // limparCampo();
     
     // alert(sorteados);
